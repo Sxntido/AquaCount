@@ -1,0 +1,2 @@
+tiempo-segundos: 10 # 1 hora
+comando-final: "say El contador ha finalizado"
