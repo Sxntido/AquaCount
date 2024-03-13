@@ -3,13 +3,13 @@ package team.aquatic.studios.api;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import team.aquatic.studios.AquaCount;
-import team.aquatic.studios.commands.AquaCMD;
+import team.aquatic.studios.commands.Executor;
 
-public class CountAPI extends PlaceholderExpansion {
+public class AquaCountAPI extends PlaceholderExpansion {
 
     private AquaCount plugin;
 
-    public CountAPI(AquaCount plugin) {
+    public AquaCountAPI(AquaCount plugin) {
         this.plugin = plugin;
     }
 
@@ -51,10 +51,10 @@ public class CountAPI extends PlaceholderExpansion {
 
     public String Format(Player player, String identifier) {
         if(identifier.equals("time_format")){
-            if(AquaCMD.time == -1 || AquaCMD.time == -2){
+            if(Executor.time == -1 || Executor.time == -2){
                 return "X";
             } else {
-                int time = AquaCMD.time;
+                int time = Executor.time;
                 if (time >= 60 * 60 * 24 * 30) {
                     int months = time / (60 * 60 * 24 * 30);
                     return months + "mo";
@@ -80,10 +80,10 @@ public class CountAPI extends PlaceholderExpansion {
 
     public String NoFormat(Player player, String identifier) {
         if (identifier.equals("time_total")) {
-            if (AquaCMD.time == -1 || AquaCMD.time == -2) {
+            if (Executor.time == -1 || Executor.time == -2) {
                 return "X";
             } else {
-                int time = AquaCMD.time;
+                int time = Executor.time;
                 StringBuilder fullTime = new StringBuilder();
                 int days = time / (60 * 60 * 24);
                 time -= days * (60 * 60 * 24);

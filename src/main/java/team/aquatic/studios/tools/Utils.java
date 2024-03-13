@@ -31,4 +31,33 @@ public class Utils {
         return matcher.appendTail(buffer).toString();
     }
 
+    private final static int CENTER_PX = 125;
+
+    public static String CenterMessage(String message) {
+        String translatedMessage = Utils.translateHexColorCodes(Utils.Color(message));
+
+        String strippedMessage = ChatColor.stripColor(translatedMessage);
+
+        int messagePxSize = 0;
+        boolean isBold = false;
+
+        for (char c : strippedMessage.toCharArray()) {
+            DefaultFontInfo dFI = DefaultFontInfo.getDefaultFontInfo(c);
+            messagePxSize += isBold ? dFI.getBoldLength() : dFI.getLength();
+            messagePxSize++;
+        }
+
+        int halvedMessageSize = messagePxSize / 2;
+        int toCompensate = CENTER_PX - halvedMessageSize;
+        int spaceLength = DefaultFontInfo.SPACE.getLength() + 1;
+        int compensated = 0;
+        StringBuilder sb = new StringBuilder();
+
+        while (compensated < toCompensate) {
+            sb.append(" ");
+            compensated += spaceLength;
+        }
+
+        return sb.toString() + translatedMessage;
+    }
 }

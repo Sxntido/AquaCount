@@ -3,6 +3,9 @@ version: '1.0'
 main: team.aquatic.studios.AquaCount
 api-version: '1.20'
 
+depend:
+  - PlaceholderAPI
+
 commands:
   aquacount:
     description: Command for counter

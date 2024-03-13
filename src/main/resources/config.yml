@@ -1,12 +1,24 @@
 commands:
-  - "say ¡El primer comando ejecutado!"
-  - "give @p minecraft:diamond 1"
-  - "time set day"
+  - '[PLAYER] gamemode creative'
+  - '[PLAYER] give %player_name% minecraft:diamond_axe 3'
+  - '[CONSOLE] say AquaCount - Finally'
+  - '[MESSAGE] &cDADADADADA'
+  - '[MESSAGE] &#2E9CEDDSADASDAD'
+  - '[SOUND] ENTITY_PLAYER_LEVELUP'
+
+display:
+  start_title: "&#2E9CED&lA&#30A5EF&lq&#32AFF2&lu&#33B8F4&la&#35C2F6&lC&#37CBF8&lo&#39D4FB&lu&#3ADEFD&ln&#3CE7FF&lt"
+  start_subtitle: "&#2E9CED⌚ &fCounter started &e%aquacount_time_total%"
+  stop_title: "&#2E9CED&lA&#30A5EF&lq&#32AFF2&lu&#33B8F4&la&#35C2F6&lC&#37CBF8&lo&#39D4FB&lu&#3ADEFD&ln&#3CE7FF&lt"
+  stop_subtitle: "&#FF2F2F⌚ &fThe counter &cstopped"
 
 messages:
-  permission: "&#084CFBY&#0E52FBo&#1357FBu &#195DFBh&#1E62FBa&#2468FBv&#296DFBe &#2F73FBn&#3479FCo&#3A7EFCt &#3F84FCp&#4589FCe&#4A8FFCr&#5094FCm&#559AFCi&#5BA0FCs&#60A5FCs&#66ABFCi&#6BB0FCo&#71B6FCn &#76BBFCt&#7CC1FCh&#81C6FCi&#87CCFDs &#8CD2FDc&#92D7FDo&#97DDFDm&#9DE2FDm&#A2E8FDa&#A8EDFDn&#ADF3FDd"
-  unknown: "&#084CFBT&#0C50FBh&#1155FBi&#1559FBs &#195EFBc&#1E62FBo&#2266FBm&#266BFBm&#2B6FFBa&#2F74FBn&#3378FCd &#387CFCi&#3C81FCn&#4085FCv&#458AFCa&#498EFCl&#4D92FCi&#5297FCd &#569BFCe&#5BA0FCx&#5FA4FCe&#63A8FCc&#68ADFCu&#6CB1FCt&#70B5FCe &#75BAFC/&#79BEFCa&#7DC3FCq&#82C7FCu&#86CBFDa&#8AD0FDc&#8FD4FDo&#93D9FDu&#97DDFDn&#9CE1FDt &#A0E6FDh&#A4EAFDe&#A9EFFDl&#ADF3FDp"
-  nothing: "&#084CFBN&#1458FBo &#2064FBc&#2B70FBo&#377CFCu&#4388FCn&#4F94FCt &#5BA0FCt&#66ABFCh&#72B7FCe &#7EC3FCt&#8ACFFDi&#95DBFDm&#A1E7FDe&#ADF3FDr"
-  stop: "&#084CFBT&#1559FBi&#2166FBm&#2E73FBe&#3B7FFCr &#478CFCi&#5499FCs &#61A6FCs&#6EB3FCt&#7AC0FCo&#87CCFDp&#94D9FDp&#A0E6FDe&#ADF3FDd"
-  number: "&#084CFBP&#0D51FBl&#1256FBe&#175BFBa&#1C60FBs&#2165FBe &#266AFBe&#2B6FFBn&#3074FBt&#357AFCe&#3A7FFCr &#3F84FCa &#4489FCv&#498EFCa&#4E93FCl&#5398FCi&#589DFCd &#5DA2FCn&#62A7FCu&#67ACFCm&#6CB1FCb&#71B6FCe&#76BBFCr &#7BC0FCf&#80C5FCo&#85CBFDr &#8AD0FDt&#8FD5FDh&#94DAFDe &#99DFFDt&#9EE4FDi&#A3E9FDm&#A8EEFDe&#ADF3FD."
-  invalid: "&#084CFBU&#0A4EFBn&#0C50FBr&#0E52FBe&#1054FBc&#1256FBo&#1458FBg&#165AFBn&#185CFBi&#1A5EFBz&#1C60FBe&#1E62FBd &#2064FBt&#2266FBi&#2469FBm&#266BFBe &#286DFBu&#2A6FFBn&#2C71FBi&#2E73FBt&#3075FB. &#3277FCU&#3479FCs&#367BFCe&#387DFC: &#3A7FFCs &#3C81FC(&#3E83FCs&#4085FCe&#4287FCc&#4489FCo&#468BFCn&#488DFCd&#4A8FFCs&#4C91FC)&#4E93FC, &#5095FCm &#5297FC(&#5499FCm&#569BFCi&#589DFCn&#5BA0FCu&#5DA2FCt&#5FA4FCe&#61A6FCs&#63A8FC)&#65AAFC, &#67ACFCh &#69AEFC(&#6BB0FCh&#6DB2FCo&#6FB4FCu&#71B6FCr&#73B8FCs&#75BAFC)&#77BCFC, &#79BEFCd &#7BC0FC(&#7DC2FCd&#7FC4FCa&#81C6FCy&#83C8FCs&#85CAFD)&#87CCFD, &#89CEFDw &#8BD0FD(&#8DD2FDw&#8FD4FDe&#91D6FDe&#93D9FDk&#95DBFDs&#97DDFD)&#99DFFD, &#9BE1FDm&#9DE3FDo &#9FE5FD(&#A1E7FDm&#A3E9FDo&#A5EBFDn&#A7EDFDt&#A9EFFDh&#ABF1FDs&#ADF3FD)"
+  reload: "&#2E9CED[⌚] &fThe config.yml was reloaded with your new settings"
+  usage: "&#2E9CED[⌚] &fExecute &#2E9CED/aquacount start <time> <unit>-> s,m,h,d,w,mo"
+  started: "&#2E9CED[⌚] &fA new counter was started &e%duration%%unit% &7(%aquacount_time_total%)"
+  permission: "&#FF1515[⌚] &fYou do not have permissions to run this command"
+  unknown: "&#FF9E29[⌚] &fInvalid command run &#2E9CED/aquacount help &fsee the commands"
+  nothing: "&#FF2F2F[⌚] &fRight now there is no counter in function"
+  stop: "&#FF2F2F[⌚] &fThe running counter has just been finalized"
+  number: "&#FF2F2F[⌚] &fThe time you inserted was invalid &fin the command"
+  invalid: "&#2E9CED[⌚] &fThese are the valid units: &#2E9CEDs (seconds), m (minutes), h (hours), d (days), w (weeks), mo (months)"

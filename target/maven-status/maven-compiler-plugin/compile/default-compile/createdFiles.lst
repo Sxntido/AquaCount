@@ -1,5 +1,6 @@
 team\aquatic\studios\tools\Utils.class
-team\aquatic\studios\commands\AquaCMD$1.class
 team\aquatic\studios\AquaCount.class
-team\aquatic\studios\api\CountAPI.class
-team\aquatic\studios\commands\AquaCMD.class
+team\aquatic\studios\commands\Executor$1.class
+team\aquatic\studios\commands\Executor.class
+team\aquatic\studios\api\AquaCountAPI.class
+team\aquatic\studios\tools\DefaultFontInfo.class
