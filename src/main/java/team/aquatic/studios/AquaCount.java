@@ -4,7 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import team.aquatic.studios.api.AquaCountAPI;
-import team.aquatic.studios.commands.Executor;
+import team.aquatic.studios.actions.Executor;
+import team.aquatic.studios.actions.Tab;
+import team.aquatic.studios.register.Metrics;
 import team.aquatic.studios.tools.Utils;
 
 public class AquaCount extends JavaPlugin {
@@ -14,39 +16,40 @@ public class AquaCount extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        saveDefaultConfig();
+        int pluginId = 21342;
+        Metrics metrics = new Metrics(this, pluginId);
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF─█▀▀█ ░█▀▀█ ░█─░█ ─█▀▀█ ░█▀▀█ ░█▀▀▀█ ░█─░█ ░█▄─░█ ▀▀█▀▀")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF░█▄▄█ ░█─░█ ░█─░█ ░█▄▄█ ░█─── ░█──░█ ░█─░█ ░█░█░█ ─░█──")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF░█─░█ ─▀▀█▄ ─▀▄▄▀ ░█─░█ ░█▄▄█ ░█▄▄▄█ ─▀▄▄▀ ░█──▀█ ─░█──")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED    ___                     ______                  __ ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED   /   | ____ ___  ______ _/ ____/___  __  ______  / /_")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED  / /| |/ __ `/ / / / __ `/ /   / __ \\/ / / / __ \\/ __/")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED / ___ / /_/ / /_/ / /_/ / /___/ /_/ / /_/ / / / / /_  ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED/_/  |_\\__, /\\__,_/\\__,_/\\____/\\____/\\__,_/_/ /_/\\__/  ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED         /_/                                           ")));
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#86BDFFInformation:")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fVersion: &#56B7FF"+aquatic.getVersion())));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fStatus: &#7DFF83Enabled")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fAuthor: &#7DFF83@Sxntido")));
-        Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &fAll rights reserved by &#48D7FFAquatic Studios")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#7DCDFFRunning &#1179FF" + aquatic.getVersion() + "-SNAPSHOT &#7DCDFF& Status: &a[Enabled]")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CEDAll rights reserved by &#1179FFSxntido & Aquatic Studios")));
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
 
         this.getCommand("aquacount").setExecutor(new Executor(this));
+        this.getCommand("aquacount").setTabCompleter(new Tab());
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new AquaCountAPI(this).register();
         }
-        saveDefaultConfig();
     }
 
     @Override
     public void onDisable() {
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF─█▀▀█ ░█▀▀█ ░█─░█ ─█▀▀█ ░█▀▀█ ░█▀▀▀█ ░█─░█ ░█▄─░█ ▀▀█▀▀")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF░█▄▄█ ░█─░█ ░█─░█ ░█▄▄█ ░█─── ░█──░█ ░█─░█ ░█░█░█ ─░█──")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("&#56B7FF░█─░█ ─▀▀█▄ ─▀▄▄▀ ░█─░█ ░█▄▄█ ░█▄▄▄█ ─▀▄▄▀ ░█──▀█ ─░█──")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED    ___                     ______                  __ ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED   /   | ____ ___  ______ _/ ____/___  __  ______  / /_")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED  / /| |/ __ `/ / / / __ `/ /   / __ \\/ / / / __ \\/ __/")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED / ___ / /_/ / /_/ / /_/ / /___/ /_/ / /_/ / / / / /_  ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED/_/  |_\\__, /\\__,_/\\__,_/\\____/\\____/\\__,_/_/ /_/\\__/  ")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CED         /_/                                           ")));
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#86BDFFInformation:")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fVersion: &#56B7FF"+aquatic.getVersion())));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fStatus: &cDisabled")));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color("  &7● &fAuthor: &#7DFF83@Sxntido")));
-        Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
-        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &fAll rights reserved by &#48D7FFAquatic Studios")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#7DCDFFRunning &#1179FF" + aquatic.getVersion() + "-SNAPSHOT &#7DCDFF& Status: &c[Disabled]")));
+        Bukkit.getConsoleSender().sendMessage(Utils.translateHexColorCodes(Utils.Color(" &#2E9CEDAll rights reserved by &#1179FFSxntido & Aquatic Studios")));
         Bukkit.getConsoleSender().sendMessage(Utils.Color("&r"));
     }
 }
