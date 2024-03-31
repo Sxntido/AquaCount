@@ -1,12 +1,19 @@
+#                                                           Developed by Sxntido
+#                                                     (Aquatic Studios @ (C) 2016-2024)
+
 name: AquaCount
 version: '${project.version}'
-main: team.aquatic.studios.AquaCount
+author: 'Sxntido'
+
 api-version: '1.20'
+main: team.aquatic.studios.AquaCount
+description: 'All rights reserved by Aquatic Studios'
 
 depend:
   - PlaceholderAPI
 
 commands:
   aquacount:
-    description: Command for counter
+    description: Command to start the counter
     usage: /<command> start <time> <unit>
+    permission: aquacount.admin
