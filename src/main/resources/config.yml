@@ -1,10 +1,29 @@
+#              AquaCount developed by @Sxntido
+# https://github.com/Sxntido - https://github.com/aquaticstudios
+
+#  Actions - Commands > Examples
+#   [PLAYER] - Command executed by the user when the counter ends
+#   [SOUND] - Sound that plays when the countdown ends
+#   [MESSAGE] - Message sent when the counter ends
+#   [CONSOLE] - Command executed by the console when the counter ends
+
+# Sounds: https://helpch.at/docs/1.20.1/org/bukkit/Sound.html
+# Support Colors & HEX: https://www.birdflop.com/resources/rgb/
+
 commands:
   - '[PLAYER] gamemode creative'
-  - '[PLAYER] give %player_name% minecraft:diamond_axe 3'
+  - '[PLAYER] give %player_name% minecraft:diamond_axe 1'
   - '[CONSOLE] say AquaCount - Finally'
-  - '[MESSAGE] &cDADADADADA'
-  - '[MESSAGE] &#2E9CEDDSADASDAD'
+  - '[MESSAGE] &r'
+  - '[MESSAGE] &r                   &#2E9CED&lA&#30A5EF&lq&#32AFF2&lu&#33B8F4&la&#35C2F6&lC&#37CBF8&lo&#39D4FB&lu&#3ADEFD&ln&#3CE7FF&lt &7- &b&lEXAMPLE'
+  - '[MESSAGE] &r        &#FF2F2F⌚ &f¡The counter finished, take your reward! &#FF2F2F⌚'
+  - '[MESSAGE] &r'
   - '[SOUND] ENTITY_PLAYER_LEVELUP'
+
+# Here you can modify the result when there is no counter
+# Variables: %aquacount_time_total% - %aquacount_time_format%
+variable:
+  no-time: "⌚" # Only text or emojis do not support colors
 
 display:
   start_title: "&#2E9CED&lA&#30A5EF&lq&#32AFF2&lu&#33B8F4&la&#35C2F6&lC&#37CBF8&lo&#39D4FB&lu&#3ADEFD&ln&#3CE7FF&lt"
