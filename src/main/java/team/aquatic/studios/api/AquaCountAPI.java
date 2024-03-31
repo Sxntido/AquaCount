@@ -3,7 +3,7 @@ package team.aquatic.studios.api;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import team.aquatic.studios.AquaCount;
-import team.aquatic.studios.commands.Executor;
+import team.aquatic.studios.actions.Executor;
 
 public class AquaCountAPI extends PlaceholderExpansion {
 
@@ -39,20 +39,19 @@ public class AquaCountAPI extends PlaceholderExpansion {
     }
 
     @Override
-    public String onPlaceholderRequest(Player player, String identifier){
+    public String onPlaceholderRequest(Player player, String identifier) {
         if (identifier.equals("time_format")) {
             return Format(player, identifier);
         } else if (identifier.equals("time_total")) {
             return NoFormat(player, identifier);
         }
-
         return null;
     }
 
     public String Format(Player player, String identifier) {
         if(identifier.equals("time_format")){
             if(Executor.time == -1 || Executor.time == -2){
-                return "X";
+                return plugin.getConfig().getString("variable.no-time");
             } else {
                 int time = Executor.time;
                 if (time >= 60 * 60 * 24 * 30) {
@@ -81,7 +80,7 @@ public class AquaCountAPI extends PlaceholderExpansion {
     public String NoFormat(Player player, String identifier) {
         if (identifier.equals("time_total")) {
             if (Executor.time == -1 || Executor.time == -2) {
-                return "X";
+                return plugin.getConfig().getString("variable.no-time");
             } else {
                 int time = Executor.time;
                 StringBuilder fullTime = new StringBuilder();
